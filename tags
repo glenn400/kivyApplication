@@ -1,0 +1,19 @@
+!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
+AnotherScreen	/home/glenn400/kivyprojects/belovedApp/mainapp.py	/^class AnotherScreen(Screen):$/;"	c	language:Python
+build	/home/glenn400/kivyprojects/belovedApp/mainapp.py	/^    def build(self):$/;"	m	language:Python	class:MainApp
+callback	/home/glenn400/kivyprojects/belovedApp/mainapp.py	/^    def callback(self , instance):$/;"	m	language:Python	class:MainScreen
+create_Labels	/home/glenn400/kivyprojects/belovedApp/mainapp.py	/^    def create_Labels(self, numbuttons):$/;"	m	language:Python	class:OtherScreen
+getFilename	/home/glenn400/kivyprojects/belovedApp/musicFile.py	/^    def getFilename(self):$/;"	m	language:Python	class:MusicFileInfo
+getInfo	/home/glenn400/kivyprojects/belovedApp/musicFile.py	/^    def getInfo(self):$/;"	m	language:Python	class:MusicFileInfo
+getlogininfo	/home/glenn400/kivyprojects/belovedApp/mainapp.py	/^    def getlogininfo(self , login , password):$/;"	m	language:Python	class:MainScreen
+get_id	/home/glenn400/kivyprojects/belovedApp/mainapp.py	/^    def get_id(self , instance):$/;"	m	language:Python	class:MainScreen
+MainApp	/home/glenn400/kivyprojects/belovedApp/mainapp.py	/^class MainApp(App):$/;"	c	language:Python
+MainScreen	/home/glenn400/kivyprojects/belovedApp/mainapp.py	/^class MainScreen(Screen):$/;"	c	language:Python
+MusicFileInfo	/home/glenn400/kivyprojects/belovedApp/musicFile.py	/^class MusicFileInfo:$/;"	c	language:Python
+OtherScreen	/home/glenn400/kivyprojects/belovedApp/mainapp.py	/^class OtherScreen(Screen):$/;"	c	language:Python
+presentation	/home/glenn400/kivyprojects/belovedApp/mainapp.py	/^presentation = Builder.load_file("mainapp.kv")$/;"	v	language:Python
+PressBtn	/home/glenn400/kivyprojects/belovedApp/mainapp.py	/^    def PressBtn(self, instance):$/;"	m	language:Python	class:MainScreen
+printinfo	/home/glenn400/kivyprojects/belovedApp/mainapp.py	/^    def printinfo(self, instance, value):$/;"	m	language:Python	class:OtherScreen
+ScreenManagement	/home/glenn400/kivyprojects/belovedApp/mainapp.py	/^class ScreenManagement(ScreenManager):$/;"	c	language:Python
+__init__	/home/glenn400/kivyprojects/belovedApp/mainapp.py	/^    def __init__(self, **kwargs):$/;"	m	language:Python	class:OtherScreen
+__init__	/home/glenn400/kivyprojects/belovedApp/musicFile.py	/^    def __init__(self, filename):$/;"	m	language:Python	class:MusicFileInfo

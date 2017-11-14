@@ -1,0 +1,135 @@
+# File name: mainapp.py
+#:kivy 1.10.0
+#:import FadeTransition kivy.uix.screenmanager.FadeTransition
+
+<Button>:
+    color: 0,1,0,1
+    size_hint: 0.1 , 0.1
+
+ScreenManagement:
+    transition: FadeTransition()
+    MainScreen:
+    AnotherScreen:
+    OtherScreen:
+
+<MainScreen>:
+    name: 'main'
+    BoxLayout:
+        id: login_layout
+        orientation: 'vertical'
+        padding: [10,50,10,50]
+        spacing: 50
+
+        Label:
+            text: 'Welcome Beloved'
+            font_size: 32
+
+        BoxLayout:
+            orientation: 'vertical'
+
+            Label:
+                text: 'Login'
+                font_size: 18
+                halign: 'left'
+                text_size: root.width - 20, 20
+
+            TextInput:
+                id: login
+                multiline: False
+                font_size: 28
+
+        BoxLayout:
+            orientation: 'vertical'
+
+            Label:
+                text: 'Password'
+                halign: 'left'
+                font_size: 18
+                text_size: root.width - 20, 20
+
+            TextInput:
+                id: password
+                multiline: False
+                password: True
+                font_size: 28
+        BoxLayout:
+            orientation: 'horizontal'
+
+            Button:
+                id: 'passwordbtn'
+                text: 'Connect'
+                font_size: 22
+                on_release: root.getlogininfo(login.text, password.text)
+
+            Button:
+                id: signupbtn
+                text: 'Sign Up'
+                font_size: 22
+                on_press: root.callback(self)
+
+<AnotherScreen>:
+    name: 'player'
+
+    BoxLayout:
+        id: music_layout
+        orientation: 'vertical'
+        padding: [10,50,10,50]
+        spacing: 50
+
+        BoxLayout:
+            orientation: 'vertical'
+ 
+            Label:
+                text: 'Beloved Music'
+                halign: 'center'
+                font_size: 20
+
+            Label:
+                id: artistinfoetc
+                halign: 'center'
+                text: 'Artist Info'
+
+            Image:
+                source: 'images/grillz.jpg'
+
+            BoxLayout:
+                orientation: 'vertical'
+
+                ProgressBar:
+                    max: 1000
+
+
+                FloatLayout:
+
+                    Button:
+                        id: 'play'
+                        pos_hint: {"x": 0.5, 'y':0}
+                        background_normal: 'images/play.png'
+                        background_down: 'images/pause.png'
+
+                    Button:
+                        id: 'prev'
+                        pos_hint: {"x": 0.4, 'y':0}
+                        background_normal: 'images/prev.png'
+
+                    Button:
+                        id: 'forward'
+                        pos_hint: {"x": 0.6, 'y':0}
+                        background_normal: 'images/next.png'
+
+                    Button:
+                        id: 'stop'
+                        pos_hint: {"x": 0.7, 'y':0}
+                        background_normal: 'images/stop.png'
+
+                    Button:
+                        text:'Volume'
+                        id: 'volume'
+                        pos_hint: {"x": 0.3, 'y':0}
+
+<OtherScreen>:
+    name: 'artist'
+    Button:
+        text: 'Artist List'
+        on_release: app.root.current = 'player'
+

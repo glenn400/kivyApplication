@@ -14,14 +14,17 @@ from kivy.uix.scrollview import ScrollView
 from kivy.uix.gridlayout import GridLayout
 from kivy.core.window import Window
 
-import musicFile
+from musicFile import MusicFileInfo
 
 
 class OtherScreen(Screen):
     def __init__(self, **kwargs):
         # constructor to intialize labels for the artist screen in the app
         super(OtherScreen,self).__init__(**kwargs)
-        self.create_Labels(100)
+        # get music files
+        self.gmf = MusicFileInfo()
+        musiclist , musiclen = self.gmf.getMusic()
+        self.create_Labels(musiclist , musiclen)
 
     def printinfo(self, instance, value):
         # function that will be used to send user to music player when the
@@ -29,16 +32,15 @@ class OtherScreen(Screen):
         # currently used for testing to ensure it works
         print("User clicked on", value)
 
-    def create_Labels(self, numbuttons):
+    def create_Labels(self, finfo,  numbuttons):
         # take in the number of labels to make
         # create that number of labels in a grid layout -> scrollview
         layout = GridLayout(cols=1, spacing=2,size_hint_y=None)
         layout.bind(minimum_height= layout.setter('height'))
 
-        for i in range(numbuttons):
-            print("Label num " , i)
-            val = str(i)
-            widget = Label(text="[ref=%s]Label # %s [/ref] " % (i,i) , markup=True , size_hint_y=None )
+        for i in finfo:
+            print("Label name is " , i['id'])
+            widget = Label(text="[ref=%s] %s [/ref] " % (i['song'],i['song']) , markup=True , size_hint_y=None )
             widget.bind(on_ref_press=self.printinfo)
             layout.add_widget(widget)
         root = ScrollView(size_hint=(1, None), size=(Window.width, Window.height))
